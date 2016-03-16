@@ -23,4 +23,11 @@ public interface TodoItemDAOLocal {
 	 */
 	public List<TodoItem> listActive(int start, int max);
 	public int getCount();
+	
+	/**
+	 * This method returns a TodoItem that has the given summary.
+	 * 
+	 * @return
+	 */
+	public TodoItem getBySummary(String summary);
 }

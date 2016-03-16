@@ -2,5 +2,7 @@
     <wb-module deploy-name="TodoEJB">
         <wb-resource deploy-path="/" source-path="/ejbModule" tag="defaultRootSource"/>
         <property name="java-output-path" value="/TodoEJB/build/classes"/>
+        <property name="ClientProject" value="TodoEJBClient"/>
+        <property name="ClientJARURI" value="TodoEJBClient.jar"/>
     </wb-module>
 </project-modules>

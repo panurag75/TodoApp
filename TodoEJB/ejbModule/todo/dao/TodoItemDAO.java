@@ -78,7 +78,21 @@ public class TodoItemDAO implements TodoItemDAOLocal, TodoItemDAORemote {
 			.setFirstResult(start)
 			.setMaxResults(max);
 		List<TodoItem> resultList = tq.getResultList();
-		lgr.log(Level.FINEST, "Entry. result={0}", resultList);
+		lgr.log(Level.FINEST, "Exit. result={0}", resultList);
 		return resultList;
+	}
+	
+	/**
+	 * This method returns a TodoItem that has the given summary.
+	 * 
+	 * @return
+	 */
+	public TodoItem getBySummary(final String summary) {
+		lgr.log(Level.FINEST, "Entry. summary={0}", summary);
+		final TypedQuery<TodoItem> tq = em.createNamedQuery("getBySummary", TodoItem.class);
+		tq.setParameter("summary", summary);
+		final TodoItem ti = tq.getSingleResult();
+		lgr.log(Level.FINEST, "Exit. todoItem={0}", ti);
+		return ti;
 	}
 }
