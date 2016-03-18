@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean id="addTodoItemCon" class="todo.controller.AddTodoItemController"/>
+	<bean id="todoItemListCon" class="todo.controller.TodoItemListController"/>
+	<bean id="deleteTodoItemCon" class="todo.controller.DeleteTodoItemController"/>
+
+	<bean id="UrlMapping1" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/todoItemList.spr">todoItemListCon</prop>
+				<prop key="/addTodoItem.spr">addTodoItemCon</prop>
+				<prop key="/deleteTodoItem.spr">deleteTodoItemCon</prop>
+			</props>
+		</property>
+	</bean>	
+</beans>
+	
