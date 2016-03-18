@@ -4,8 +4,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.ejb.EJB;
-
 import todo.TodoItem;
 import todo.dao.TodoItemDAO;
 
@@ -13,9 +11,18 @@ public class TodoItemService {
 	
 	private static final Logger lgr = Logger.getLogger(TodoItemService.class.getName());
 
-	@EJB
-	private TodoItemDAO todoItemDAO = new TodoItemDAO();
-	
+	private TodoItemDAO todoItemDAO = null;
+
+	/**
+	 * Method to set TodoItemDAO object. TodoItemDAO object should be set before using an object of 
+	 * this class.
+	 * 
+	 * @param todoItemDAO
+	 */
+	public void setTodoItemDAO(final TodoItemDAO todoItemDAO) {
+		this.todoItemDAO = todoItemDAO;
+	}
+
 	public TodoItem create(TodoItem todoItem) {
 		lgr.log(Level.FINEST, "entry");
 		todoItemDAO.create(todoItem);

@@ -6,9 +6,9 @@ import java.util.logging.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
+import todo.dao.TodoItemDAOImpl;
 import todo.service.TodoItemService;
 
 public class Util {
@@ -16,6 +16,10 @@ public class Util {
 	private static final Logger lgr = Logger.getLogger(Util.class.getName());
 	private static TodoItemService todoItemService = new TodoItemService();
 
+	static {
+		todoItemService.setTodoItemDAO(new TodoItemDAOImpl());
+	}
+	
 	public static TodoItemService getTodoItemService() {
 		return todoItemService;
 	}

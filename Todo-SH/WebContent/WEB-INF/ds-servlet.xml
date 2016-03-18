@@ -16,6 +16,6 @@
 				<prop key="/deleteTodoItem.spr">deleteTodoItemCon</prop>
 			</props>
 		</property>
-	</bean>	
+	</bean>
 </beans>
 	
