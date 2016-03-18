@@ -8,7 +8,7 @@
 </head>
 <body>
 Todo item is added.<br>
-<a href="<%= pageContext.getServletContext().getContextPath()%>/index.jsp">
+<a href="<%= pageContext.getServletContext().getContextPath()%>/index.jsp" accesskey="h">
 Home page</a><br/>
 </body>
 </html>

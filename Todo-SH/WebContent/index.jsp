@@ -8,9 +8,14 @@
 </head>
 <body>
 <h1>Todo Manager Application</h1>
-Links to pages:<br/>
-<a href="<%= pageContext.getServletContext().getContextPath()%>/todoItemList.spr">
+Actions:<br/>
+<!-- a href="<%= pageContext.getServletContext().getContextPath()%>/todoItemList.spr" accesskey="1">
 View todo items list</a><br/>
-<a href="addTodoItem.jsp">Add todo item</a><br/>
+<a href="addTodoItem.jsp" accesskey="2">Add todo item</a><br/-->
+<input type="button" value="Show list"  
+onclick="window.open('<%= pageContext.getServletContext().getContextPath()%>/todoItemList.spr',
+'_top',null,null)" accesskey="s"/><br/>
+<input type="button" value="Add todo item" onclick="window.open('addTodoItem.jsp','_top',null,null)"
+accesskey="a"/>
 </body>
 </html>

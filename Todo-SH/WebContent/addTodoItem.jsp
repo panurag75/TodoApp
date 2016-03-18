@@ -38,8 +38,8 @@ action="<%= pageContext.getServletContext().getContextPath()%>/addTodoItem.spr">
 	<input name="dueDateTime" type="text" id="dueDateTime"/> 
 	</td></tr>
 	</table>
-	<p><input type="submit" value="Add"/></p><br>
-	<a href="<%= pageContext.getServletContext().getContextPath()%>/index.jsp">
+	<p><input type="submit" value="Add" accesskey="a"/></p><br>
+	<a href="<%= pageContext.getServletContext().getContextPath()%>/index.jsp" accesskey="h">
 Home page</a><br/>
 </form>
 </body>

@@ -9,7 +9,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
 	<link rel="stylesheet" href="style.css"/>
 	<link rel="stylesheet" href="style-small.css" media="(max-width:480px)"/>
-	<title>Add todo item</title>
+	<title>Active todo item list</title>
 	<script>
 		function confirmDelete(todoItemId) {
 			console.log("in confirmDelete");
@@ -20,7 +20,9 @@
 					console.log("in onreadystatechange " + xhr.readyState);
 					if(xhr.readyState == 4 && xhr.status == 200) {
 						console.log(xhr.responseText);
-						alert("Todo item deleted. Please refresh to view the updated list.");
+						alert("Todo item deleted. The page will be refreshed automtically.");
+						window.open("<%= pageContext.getServletContext().getContextPath()%>/todoItemList.spr",
+								"_top", null, null);
 					}
 				}
 
@@ -33,7 +35,7 @@
 </head>
 <body>
 
-<h1>Todo items list</h1>
+<h1>Active todo items list</h1>
 <form>
 	<table border=1>
 		<thead>
@@ -53,7 +55,7 @@
 		</tr>
 	<% } %>
 	</table><br/>
-	<a href="<%= pageContext.getServletContext().getContextPath()%>/index.jsp">
+	<a href="<%= pageContext.getServletContext().getContextPath()%>/index.jsp" accesskey="h">
 Home page</a><br/>
 </form>
 </body>
