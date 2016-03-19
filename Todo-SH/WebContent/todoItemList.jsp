@@ -6,18 +6,18 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
 	<link rel="stylesheet" href="style.css"/>
 	<link rel="stylesheet" href="style-small.css" media="(max-width:480px)"/>
-	<title>Active todo item list</title>
+	<title>Active to-do item list</title>
 	<script>
 		function confirmDelete(todoItemId) {
 			console.log("in confirmDelete");
-			if(confirm("The todo item will be deleted. Please confirm.")) {
+			if(confirm("The to-do item will be deleted. Please confirm.")) {
 				// send XHR request
 				var xhr = new XMLHttpRequest();
 				xhr.onreadystatechange = function() {
 					console.log("in onreadystatechange " + xhr.readyState);
 					if(xhr.readyState == 4 && xhr.status == 200) {
 						console.log(xhr.responseText);
-						alert("Todo item deleted. The page will be refreshed automtically.");
+						alert("To-do item deleted. The page will be refreshed automatically.");
 						window.open("<%= pageContext.getServletContext().getContextPath()%>/todoItemList.spr",
 								"_top", null, null);
 					}
@@ -32,7 +32,7 @@
 </head>
 <body>
 
-<h1>Active todo items list</h1>
+<h1>Active to-do items list</h1>
 <form>
 	<table border=1>
 		<thead>

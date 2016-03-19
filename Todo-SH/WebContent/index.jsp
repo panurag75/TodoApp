@@ -6,10 +6,10 @@
 <meta name="keywords" content="todo">
 <link rel="stylesheet" href="style.css"/>
 <link rel="stylesheet" href="style-small.css" media="(max-width:480px)"/>
-<title>Todo Manager Application</title>
+<title>To-do Manager Application</title>
 </head>
 <body>
-<h1>Todo Manager Application</h1>
+<h1>To-do Manager Application</h1>
 Actions:<br/>
 <!-- a href="<%= pageContext.getServletContext().getContextPath()%>/todoItemList.spr" accesskey="1">
 View todo items list</a><br/>
@@ -17,7 +17,7 @@ View todo items list</a><br/>
 <input type="button" value="Show list"  
 onclick="window.open('<%= pageContext.getServletContext().getContextPath()%>/todoItemList.spr',
 '_top',null,null)" accesskey="s"/><br/>
-<input type="button" value="Add todo item" onclick="window.open('addTodoItem.jsp','_top',null,null)"
+<input type="button" value="Add to-do item" onclick="window.open('addTodoItem.jsp','_top',null,null)"
 accesskey="a"/>
 </body>
 </html>
