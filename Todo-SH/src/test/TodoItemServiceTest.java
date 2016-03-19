@@ -30,6 +30,7 @@ public class TodoItemServiceTest {
 	private Status status_completed, status_new;
 
 	public TodoItemServiceTest() {
+		System.out.println("in c'tor");
 		service.setTodoItemDAO(todoItemDAO);
 
 		final Calendar cal = Calendar.getInstance();
@@ -50,6 +51,7 @@ public class TodoItemServiceTest {
 	 */
 	@Test
 	public void testCreate() {
+		System.out.println("in testCreate");
 		final TodoItem ti = new TodoItem();
 		ti.setSummary("test todoitem 1");
 		ti.setDescription("description of test todoitem 1");
@@ -84,6 +86,7 @@ public class TodoItemServiceTest {
 		 Create a todo item. Get the object representing persisted data & 
 		 call delete method to delete it.
 		 */
+		System.out.println("in delete");
 		TodoItem ti6 = new TodoItem();
 		final String summary6 = "test todoitem 6";
 		ti6.setSummary(summary6);
@@ -100,13 +103,34 @@ public class TodoItemServiceTest {
 		service.delete(ti6.getId());
 	}
 
-//	/**
-//	 * Test method for {@link todo.service.TodoItemService#getCount()}.
-//	 */
-//	@Test
-//	public void testGetCount() {
-//		fail("Not yet implemented"); // TODO
-//	}
+	/**
+	 * Test method for {@link todo.service.TodoItemService#getCount()}.
+	 */
+	@Test
+	public void testGetCount() {
+		/*
+		 Procedure:
+		 Add 2 items and call getCount. Count should be 2.
+		 */
+		System.out.println("in testGetCount");
+		final TodoItem ti7 = new TodoItem();
+		ti7.setSummary("test todoitem 7");
+		ti7.setDescription("description of test todoitem 7");
+		ti7.setCreatedDate(now);
+		ti7.setDueDateTime(dueDate);
+		ti7.setStatus(status_completed);
+		service.create(ti7);
+
+		final TodoItem ti8 = new TodoItem();
+		ti8.setSummary("test todoitem 8");
+		ti8.setDescription("description of test todoitem 8");
+		ti8.setCreatedDate(now);
+		ti8.setDueDateTime(dueDate);
+		ti8.setStatus(status_completed);
+		service.create(ti8);
+
+		assertTrue(service.getCount() == 2);
+	}
 
 	/**
 	 * Test method for {@link todo.service.TodoItemService#listActive(int, int)}.
@@ -120,6 +144,7 @@ public class TodoItemServiceTest {
 		 # Verify that all items with status Completed are not returned.
 		 All other items should be returned.
 		 */
+		System.out.println("in testListActive");
 		// create two items with status New.
 		TodoItem ti2 = new TodoItem();
 		final String summary2 = "test todoitem 2";
@@ -179,6 +204,7 @@ public class TodoItemServiceTest {
 	 */
 	@Test
 	public void testGetBySummary() {
+		System.out.println("testGetBySummary");
 		TodoItem ti5 = new TodoItem();
 		final String summary5 = "test todoitem 5";
 		ti5.setSummary(summary5);

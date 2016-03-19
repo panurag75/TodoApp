@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="ISO-8859-1">
+	<meta charset="UTF-8">
 	<link rel="stylesheet" href="style.css"/>
 	<link rel="stylesheet" href="style-small.css" media="(max-width:480px)"/>
 	<title>Add todo item result</title>

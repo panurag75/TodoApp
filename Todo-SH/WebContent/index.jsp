@@ -1,7 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1"></meta>
+<meta charset="UTF-8">
+<meta name="description" content="Application for managing todo items">
+<meta name="keywords" content="todo">
 <link rel="stylesheet" href="style.css"/>
 <link rel="stylesheet" href="style-small.css" media="(max-width:480px)"/>
 <title>Todo Manager Application</title>
