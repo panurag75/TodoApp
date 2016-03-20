@@ -4,8 +4,14 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
-	<link rel="stylesheet" href="style.css"/>
-	<link rel="stylesheet" href="style-small.css" media="(max-width:480px)"/>
+	<!-- link rel="stylesheet" href="style.css"/-->
+	<!-- link rel="stylesheet" href="style-small.css" media="(max-width:480px)"/-->
+	<!-- Bootstrap -->
+	<link href="bootstrap.min.css" rel="stylesheet">
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
 	<title>Active to-do item list</title>
 	<script>
 		function confirmDelete(todoItemId) {
@@ -34,24 +40,28 @@
 
 <h1>Active to-do items list</h1>
 <form>
-	<table border=1>
-		<thead>
-			<tr>
-				<td>Summary</td>
-				<td>Description</td>
-				<td>Actions</td>
-			</tr>
-		</thead>
-	<% 	final List<TodoItem> list = (List<TodoItem>)request.getAttribute("todoItemList");
-		for(final TodoItem ti : list) { %>
-		<tr>
-			<td><%= ti.getSummary() %></td>
-			<td><%= ti.getDescription() %></td>
-			<td><input type="button" name=<%= "button" + ti.getId() %> 
-			value="Delete" onclick="confirmDelete(<%= ti.getId() %>)"></td>
-		</tr>
-	<% } %>
-	</table><br/>
+	<div class="table-responsive">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td>Summary</td>
+					<td>Description</td>
+					<td>Actions</td>
+				</tr>
+			</thead>
+			<tbody>
+		<% 	final List<TodoItem> list = (List<TodoItem>)request.getAttribute("todoItemList");
+			for(final TodoItem ti : list) { %>
+				<tr>
+					<td><%= ti.getSummary() %></td>
+					<td><%= ti.getDescription() %></td>
+					<td><input type="button" name=<%= "button" + ti.getId() %> 
+					value="Delete" onclick="confirmDelete(<%= ti.getId() %>)"></td>
+				</tr>
+		<% } %>
+			</tbody>
+		</table>
+	</div><br/>
 	<a href="<%= pageContext.getServletContext().getContextPath()%>/index.jsp" accesskey="h">
 Home page</a><br/>
 </form>
