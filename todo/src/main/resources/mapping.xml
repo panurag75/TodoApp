@@ -1,0 +1,26 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="todo.TodoItem" table="todoitem" lazy="false">
+		<id name="id" type="long">
+			<column name="id"/>
+			<generator class="increment"/>
+		</id>
+		<property name="summary"/>
+		<property name="description"/>
+		<property name="status" column="statusId"/>
+		<property name="createdDate"/>
+		<property name="updatedDate"/>
+		<property name="dueDateTime"/>
+	</class>
+	
+	<class name="todo.Status" table="status" lazy="false">
+		<id name="statusId" type="long">
+			<column name="statusId"/>
+			<generator class="increment"/>
+		</id>
+		<property name="name"/>
+	</class>
+</hibernate-mapping>
